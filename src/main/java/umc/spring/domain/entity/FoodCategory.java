@@ -1,11 +1,11 @@
 package umc.spring.domain.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import umc.spring.domain.common.BaseEntity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,5 +18,9 @@ public class FoodCategory extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long foodCategoryId;
 
+    @Column(nullable = false)
     private String foodCategoryName;
+
+    @OneToMany(mappedBy = "foodCategory", cascade = CascadeType.ALL)
+    private List<Review> reviewList = new ArrayList<>();
 }
