@@ -33,7 +33,10 @@ public class Mission extends BaseEntity {
     private Integer rewardPoint;
 
     @OneToMany(mappedBy = "mission", cascade = CascadeType.ALL)
-    private List<Mission> missionList = new ArrayList<>();
+    private List<Notification> notificationList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "mission", cascade = CascadeType.ALL)
+    private List<Review> reviewList = new ArrayList<>();
 
     @OneToMany(mappedBy = "mission", cascade = CascadeType.ALL)
     private List<UserMission> userMissionList = new ArrayList<>();

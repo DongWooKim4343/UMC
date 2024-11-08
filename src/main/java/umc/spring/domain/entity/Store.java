@@ -22,9 +22,14 @@ public class Store extends BaseEntity {
     @JoinColumn(name = "region_id")
     private Region region;
 
-
     @Column(nullable = false)
     private String location;
+
+    @Column(nullable = false)
+    private String name; //실습용
+
+    @Column(nullable = false)
+    private Float score;//실습용
 
     @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Menu> menuList = new ArrayList<>();
@@ -35,5 +40,14 @@ public class Store extends BaseEntity {
     @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Mission> missionList = new ArrayList<>();
 
-
+    @Override
+    public String toString() {
+        return "Store{" +
+                "id=" + storeId +
+                ", name='" + name + '\'' +
+                ", address='" + location + '\'' +
+                ", score=" + score +
+                ", region=" + (region != null ? region.getName() : "N/A") + // region의 이름 출력
+                '}';
+    }
 }

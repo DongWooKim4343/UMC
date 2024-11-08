@@ -3,6 +3,7 @@ package umc.spring.domain.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import umc.spring.domain.common.BaseEntity;
+import umc.spring.domain.mapping.UserFood;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,5 +23,5 @@ public class FoodCategory extends BaseEntity {
     private String foodCategoryName;
 
     @OneToMany(mappedBy = "foodCategory", cascade = CascadeType.ALL)
-    private List<Review> reviewList = new ArrayList<>();
+    private List<UserFood> userFoodList = new ArrayList<>();
 }
