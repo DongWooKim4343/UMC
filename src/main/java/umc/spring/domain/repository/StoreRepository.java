@@ -1,4 +1,4 @@
-package umc.spring.repository;
+package umc.spring.domain.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import umc.spring.domain.entity.Store;

@@ -14,6 +14,10 @@ import java.util.List;
 @AllArgsConstructor
 public class Store extends BaseEntity {
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long storeId;

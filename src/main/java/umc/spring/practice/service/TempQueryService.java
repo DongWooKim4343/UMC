@@ -1,4 +1,4 @@
-package umc.spring.service;
+package umc.spring.practice.service;
 
 public interface TempQueryService {
 
